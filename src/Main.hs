@@ -1,9 +1,9 @@
 import           Data.Maybe
 import           Text.Pandoc
-import           Text.Pandoc.Walk
+import           Text.Pandoc.JSON
 
 main :: IO ()
-main = interact (writeMarkdown def . walk autocompleteCaption . readMarkdown def)
+main = toJSONFilter autocompleteCaption
 
 autocompleteCaption :: Block -> Block
 autocompleteCaption = bottomUp autocompleteInline . bottomUp autocompleteBlock
