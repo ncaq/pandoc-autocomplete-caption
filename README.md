@@ -15,6 +15,9 @@ pandoc --filter=pandoc-autocomplete-caption
 # Authors
 
 pandoc-autocomplete-caption
+
 Copyright (C) 2015 ncaq
+
 This program is GPLv2 or any later version.
+
 See COPYRIGHT for full copyright.
