@@ -13,6 +13,6 @@ autocompleteInline (Image [] src) = Image [Str $ fst src] src
 autocompleteInline x = x
 
 autocompleteBlock :: Block -> Block
-autocompleteBlock b@(CodeBlock (i, c, v) s) | isNothing $ lookup "caption" v = CodeBlock (i, c, ("caption", i) : v) s
+autocompleteBlock b@(CodeBlock (i, c, v) s) | i /= "" && isNothing (lookup "caption" v) = CodeBlock (i, c, ("caption", i) : v) s
                                             | otherwise = b
 autocompleteBlock x = x
